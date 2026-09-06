@@ -2,7 +2,7 @@
 
 A single-page personal portfolio built with plain HTML, CSS, and JavaScript — no framework, no build step. Showcases my projects, skills, and experience as I look for AI/ML, GenAI, and Data Analyst roles.
 
-**Live site:** _add your deployed URL here once it's live_
+**Live site:** _ 
 
 ---
 
