@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>P. Sri Vibhav — AI / ML Engineer</title>
+<meta name="description" content="Portfolio of P. Sri Vibhav — AI/ML engineer building LLM apps, RAG pipelines and autonomous agents.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F4F6F5;
+    --surface:#EAEDE9;
+    --ink:#151A2B;
+    --ink-soft:#4B5263;
+    --gold:#9C7423;
+    --gold-bright:#B8862B;
+    --teal:#26594B;
+    --line:#D8DBD6;
+    --maxw:740px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
+  }
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter', -apple-system, sans-serif;
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{color:var(--teal); text-decoration-thickness:1px; text-underline-offset:3px;}
+  a:hover{color:var(--gold);}
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--gold-bright);
+    outline-offset:3px;
+    border-radius:2px;
+  }
+
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    color:var(--ink);
+    margin:0;
+  }
+
+  /* ---------- NAV ---------- */
+  header.nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(244,246,245,0.88);
+    backdrop-filter:saturate(140%) blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:var(--maxw); margin:0 auto; padding:16px 28px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .nav-mark{
+    font-family:'Fraunces', serif; font-weight:600; font-size:1.05rem;
+    color:var(--ink); text-decoration:none; letter-spacing:0.01em;
+  }
+  .nav-links{display:flex; gap:26px; list-style:none; margin:0; padding:0;}
+  .nav-links a{
+    color:var(--ink-soft); font-size:0.92rem; text-decoration:none;
+    font-weight:500;
+  }
+  .nav-links a:hover{color:var(--gold-bright);}
+
+  @media (max-width:560px){
+    .nav-links{gap:16px;}
+    .nav-links a{font-size:0.82rem;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    padding:88px 0 64px;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:radial-gradient(var(--line) 1px, transparent 1px);
+    background-size:22px 22px;
+    mask-image:linear-gradient(to bottom, black, transparent 78%);
+    -webkit-mask-image:linear-gradient(to bottom, black, transparent 78%);
+    opacity:0.7;
+    pointer-events:none;
+  }
+  .hero-inner{position:relative;}
+  .eyebrow-role{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.85rem;
+    color:var(--teal);
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(2.4rem, 6vw, 3.6rem);
+    line-height:1.08;
+    letter-spacing:-0.01em;
+  }
+  .hero-build{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:clamp(1.3rem, 3.4vw, 1.7rem);
+    color:var(--ink-soft);
+    margin-top:20px;
+    min-height:2.4em;
+  }
+  .cycle-word{
+    color:var(--gold-bright);
+    font-style:normal;
+    border-bottom:2px solid var(--line);
+  }
+  .hero-bio{
+    margin-top:26px;
+    max-width:58ch;
+    color:var(--ink-soft);
+    font-size:1.03rem;
+  }
+  .hero-ctas{
+    margin-top:34px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:11px 20px;
+    border-radius:3px;
+    font-size:0.95rem;
+    font-weight:500;
+    text-decoration:none;
+    border:1px solid var(--ink);
+    transition:background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  }
+  .btn-solid{
+    background:var(--ink);
+    color:var(--paper);
+  }
+  .btn-solid:hover{
+    background:var(--teal);
+    border-color:var(--teal);
+    color:var(--paper);
+  }
+  .btn-outline{
+    background:transparent;
+    color:var(--ink);
+    border-color:var(--line);
+  }
+  .btn-outline:hover{
+    border-color:var(--gold-bright);
+    color:var(--gold-bright);
+  }
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:56px 0;}
+  section + section{border-top:1px solid var(--line);}
+  .section-label{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.78rem;
+    color:var(--ink-soft);
+    letter-spacing:0.02em;
+    margin-bottom:10px;
+  }
+  .section-title{
+    font-size:1.55rem;
+    margin-bottom:22px;
+  }
+
+  .summary-text{
+    max-width:64ch;
+    color:var(--ink-soft);
+    font-size:1.05rem;
+  }
+  .summary-text strong{color:var(--ink); font-weight:600;}
+
+  /* ---------- SKILLS ---------- */
+  .skill-row{
+    display:grid;
+    grid-template-columns:150px 1fr;
+    gap:18px;
+    padding:14px 0;
+    border-top:1px solid var(--line);
+  }
+  .skill-row:last-child{border-bottom:1px solid var(--line);}
+  .skill-cat{
+    font-weight:600;
+    color:var(--ink);
+    font-size:0.95rem;
+    padding-top:2px;
+  }
+  .skill-tags{display:flex; flex-wrap:wrap; gap:8px 10px;}
+  .tag{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.83rem;
+    color:var(--teal);
+    background:var(--surface);
+    padding:4px 10px;
+    border-radius:3px;
+    white-space:nowrap;
+  }
+
+  @media (max-width:560px){
+    .skill-row{grid-template-columns:1fr; gap:6px;}
+  }
+
+  /* ---------- EXPERIENCE (timeline) ---------- */
+  .timeline{position:relative; padding-left:26px;}
+  .timeline::before{
+    content:"";
+    position:absolute; left:5px; top:6px; bottom:6px;
+    width:1px; background:var(--line);
+  }
+  .timeline-item{position:relative; margin-bottom:8px;}
+  .timeline-item::before{
+    content:"";
+    position:absolute; left:-26px; top:6px;
+    width:11px; height:11px; border-radius:50%;
+    background:var(--paper);
+    border:2px solid var(--gold-bright);
+  }
+  .role-row{
+    display:flex; justify-content:space-between; align-items:baseline;
+    flex-wrap:wrap; gap:6px 16px;
+    margin-bottom:10px;
+  }
+  .role-title{font-weight:600; font-size:1.08rem;}
+  .role-meta{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.82rem;
+    color:var(--ink-soft);
+  }
+  ul.bullets{
+    margin:0; padding-left:20px; color:var(--ink-soft);
+  }
+  ul.bullets li{margin-bottom:8px;}
+  ul.bullets li::marker{color:var(--gold-bright);}
+
+  /* ---------- PROJECTS ---------- */
+  .project{padding:26px 0;}
+  .project + .project{border-top:1px solid var(--line);}
+  .project-head{
+    display:flex; justify-content:space-between; align-items:baseline;
+    flex-wrap:wrap; gap:8px 16px;
+    margin-bottom:8px;
+  }
+  .project-title{font-size:1.2rem;}
+  .project-link{font-size:0.88rem; font-weight:500; white-space:nowrap;}
+  .project-stack{
+    display:flex; flex-wrap:wrap; gap:6px 8px;
+    margin-bottom:14px;
+  }
+  .project p.desc{color:var(--ink-soft); margin:0 0 12px;}
+
+  /* ---------- CERTS / ACHIEVEMENTS ---------- */
+  .two-col{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:36px;
+  }
+  @media (max-width:640px){
+    .two-col{grid-template-columns:1fr; gap:28px;}
+  }
+  .list-plain{margin:0; padding:0; list-style:none;}
+  .list-plain li{
+    padding:10px 0;
+    border-top:1px solid var(--line);
+    color:var(--ink-soft);
+  }
+  .list-plain li:last-child{border-bottom:1px solid var(--line);}
+  .list-plain li strong{color:var(--ink); font-weight:600;}
+
+  /* ---------- CONTACT / FOOTER ---------- */
+  footer{
+    padding:64px 0 48px;
+  }
+  .contact-title{
+    font-size:clamp(1.8rem, 4.5vw, 2.4rem);
+    max-width:14ch;
+    margin-bottom:20px;
+  }
+  .contact-links{
+    display:flex; flex-wrap:wrap;
+    gap:10px 28px;
+    margin-top:26px;
+    font-size:0.98rem;
+  }
+  .contact-links a{font-weight:500;}
+  .contact-form{
+    margin-top:40px;
+    max-width:520px;
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+  .form-row{display:flex; flex-direction:column; gap:6px;}
+  .form-row label{
+    font-size:0.85rem;
+    font-weight:500;
+    color:var(--ink-soft);
+  }
+  .form-row input, .form-row textarea{
+    font-family:'Inter', sans-serif;
+    font-size:0.98rem;
+    padding:10px 12px;
+    border:1px solid var(--line);
+    border-radius:3px;
+    background:var(--surface);
+    color:var(--ink);
+    resize:vertical;
+  }
+  .form-row input:focus, .form-row textarea:focus{
+    outline:2px solid var(--gold-bright);
+    outline-offset:1px;
+    background:var(--paper);
+  }
+  .hp-field{
+    position:absolute;
+    left:-9999px;
+    width:1px; height:1px;
+    overflow:hidden;
+  }
+  #cf-submit{
+    align-self:flex-start;
+    cursor:pointer;
+    font-family:inherit;
+  }
+  #cf-submit:disabled{opacity:0.6; cursor:not-allowed;}
+  .form-status{
+    font-size:0.9rem;
+    margin:0;
+    min-height:1.2em;
+  }
+  .form-status.ok{color:var(--teal);}
+  .form-status.err{color:#B4442E;}
+
+  .foot-note{
+    margin-top:56px;
+    padding-top:20px;
+    border-top:1px solid var(--line);
+    font-size:0.85rem;
+    color:var(--ink-soft);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-mark">P. Sri Vibhav</a>
+    <ul class="nav-links">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div class="eyebrow-role">final-year b.tech · computer science &amp; design</div>
+      <h1>P. Sri Vibhav</h1>
+      <p class="hero-build">I build <span class="cycle-word" id="cycleWord">voice-controlled AI assistants</span></p>
+      <p class="hero-bio">
+        I'm a final-year CSD student who likes taking LLMs out of the demo and into things that actually run —
+        a desktop assistant that listens and acts, and a multi-agent system that investigates data on its own.
+        Currently deepening my DSA and ML fundamentals while looking for an AI/ML, GenAI, or Data Analyst role
+        where I can keep building things like that.
+      </p>
+      <div class="hero-ctas">
+        <a class="btn btn-solid" href="mailto:itsvibhav1307@gmail.com">Email me</a>
+        <a class="btn btn-outline" href="https://github.com/Vibhavraju" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn btn-outline" href="https://www.linkedin.com/in/sri-vibhav-peddiraju-449077327/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="section-label">01 — about</div>
+      <h2 class="section-title">Summary</h2>
+      <p class="summary-text">
+        <strong>I'm P. Sri Vibhav</strong>, a final-year B.Tech (CSD) student at Hyderabad Institute of Technology,
+        graduating in 2027. Over a 6-month internship at Swecha AI, I explored LLMs and Retrieval-Augmented Generation
+        using tools like Ollama and Hugging Face — and since then I've built two projects that put that learning to work:
+        an AI desktop assistant and a multi-agent framework that automates the data science lifecycle. Alongside that,
+        I'm steadily building my DSA fundamentals in Python and looking for a team where I can grow into a strong
+        AI/ML or GenAI engineer.
+      </p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <div class="section-label">02 — skills</div>
+      <h2 class="section-title">What I work with</h2>
+
+      <div class="skill-row">
+        <div class="skill-cat">Languages</div>
+        <div class="skill-tags">
+          <span class="tag">Python</span><span class="tag">SQL</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-cat">AI / GenAI</div>
+        <div class="skill-tags">
+          <span class="tag">LLMs</span><span class="tag">RAG</span><span class="tag">Prompt Engineering</span>
+          <span class="tag">LangChain</span><span class="tag">LangGraph</span><span class="tag">Ollama</span>
+          <span class="tag">Hugging Face</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-cat">ML &amp; Data</div>
+        <div class="skill-tags">
+          <span class="tag">NumPy</span><span class="tag">Pandas</span><span class="tag">Scikit-learn</span>
+          <span class="tag">XGBoost</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-cat">DSA</div>
+        <div class="skill-tags">
+          <span class="tag">Arrays</span><span class="tag">Linked Lists</span><span class="tag">Strings</span>
+          <span class="tag">Sliding Window</span><span class="tag">Heaps</span><span class="tag">Dynamic Programming</span>
+          <span class="tag">Divide &amp; Conquer</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-cat">Tools</div>
+        <div class="skill-tags">
+          <span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">Docker</span>
+          <span class="tag">VS Code</span><span class="tag">Linux/CLI</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <div class="section-label">03 — experience</div>
+      <h2 class="section-title">Where I've worked</h2>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="role-row">
+            <span class="role-title">AI Intern — Swecha AI</span>
+            <span class="role-meta">6 months</span>
+          </div>
+          <ul class="bullets">
+            <li>Explored and experimented with Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG) pipelines to build practical GenAI use cases.</li>
+            <li>Worked hands-on with open-source AI tooling including Ollama and Hugging Face for local model deployment and experimentation.</li>
+            <li>Gained practical exposure to prompt design, model evaluation, and integrating AI models into functional workflows.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="section-label">04 — projects</div>
+      <h2 class="section-title">Things I've built</h2>
+
+      <div class="project">
+        <div class="project-head">
+          <h3 class="project-title">Jarvis X — AI-Powered Personal Desktop Assistant</h3>
+          <a class="project-link" href="https://github.com/Vibhavraju" target="_blank" rel="noopener">View on GitHub</a>
+        </div>
+        <div class="project-stack">
+          <span class="tag">Python</span><span class="tag">PyAudio</span><span class="tag">Speech Recognition</span>
+          <span class="tag">TTS</span><span class="tag">LLM APIs</span><span class="tag">OS Automation</span>
+        </div>
+        <p class="desc">
+          A modular AI-powered desktop assistant that listens, talks back, manages files, and automates the system —
+          built incrementally, sprint by sprint, to bring speech processing, AI reasoning, and computer control
+          together into one assistant.
+        </p>
+        <ul class="bullets">
+          <li>Voice interaction with conversational responses, file management, and system-level automation.</li>
+          <li>Architecture designed and grown through sprint-based development rather than built all at once.</li>
+          <li>Integrates speech processing, AI reasoning, and OS-level control into a single, unified assistant.</li>
+        </ul>
+      </div>
+
+      <div class="project">
+        <div class="project-head">
+          <h3 class="project-title">Autonomous Multi-Agent Data Scientist</h3>
+          <a class="project-link" href="https://github.com/Vibhavraju" target="_blank" rel="noopener">View on GitHub</a>
+        </div>
+        <div class="project-stack">
+          <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">NumPy</span>
+          <span class="tag">Scikit-learn</span><span class="tag">XGBoost</span><span class="tag">LangGraph</span>
+          <span class="tag">RAG</span><span class="tag">SQL</span>
+        </div>
+        <p class="desc">
+          A framework of specialized AI agents, coordinated by an orchestration layer, that takes a dataset and a
+          plain-English question and runs the entire data science lifecycle on its own — profiling, cleaning, EDA,
+          feature engineering, modeling, and root-cause analysis.
+        </p>
+        <ul class="bullets">
+          <li>Automates the full pipeline: data profiling, cleaning, EDA, feature engineering, ML modeling, and evaluation.</li>
+          <li>Investigates natural-language questions against real datasets and returns evidence-backed insights.</li>
+          <li>Combines LLM-based reasoning with traditional ML to produce decision intelligence, not just dashboard metrics.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="more">
+    <div class="wrap">
+      <div class="section-label">05 — certifications &amp; achievements</div>
+      <h2 class="section-title">Beyond the projects</h2>
+      <div class="two-col">
+        <div>
+          <h3 style="font-size:1rem; font-family:'Inter',sans-serif; font-weight:600; margin-bottom:6px;">Certifications</h3>
+          <ul class="list-plain">
+            <li><strong>Python</strong> — Infosys Springboard</li>
+            <li><strong>Machine Learning</strong> — Coursera</li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="font-size:1rem; font-family:'Inter',sans-serif; font-weight:600; margin-bottom:6px;">Achievements</h3>
+          <ul class="list-plain">
+            <li>40+ DSA problems solved on <strong>LeetCode</strong> — arrays, linked lists, sliding window, DP, heaps, divide &amp; conquer.</li>
+            <li>Completed a <strong>6-month AI internship</strong> applying LLMs and RAG to real use cases.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="wrap">
+      <div class="section-label">06 — contact</div>
+      <h2 class="contact-title">Let's build something worth shipping.</h2>
+      <p class="summary-text">
+        I'm actively looking for AI/ML, GenAI, or Data Analyst roles where I can keep learning and shipping.
+        Feel free to reach out — I usually reply within a day.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:itsvibhav1307@gmail.com">itsvibhav1307@gmail.com</a>
+        <a href="tel:+918639827600">+91 86398 27600</a>
+        <a href="https://www.linkedin.com/in/sri-vibhav-peddiraju-449077327/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/Vibhavraju" target="_blank" rel="noopener">GitHub</a>
+      </div>
+
+      <form id="contactForm" class="contact-form" novalidate>
+        <div class="form-row">
+          <label for="cf-name">Name</label>
+          <input type="text" id="cf-name" name="name" required maxlength="120" autocomplete="name">
+        </div>
+        <div class="form-row">
+          <label for="cf-email">Email</label>
+          <input type="email" id="cf-email" name="email" required maxlength="200" autocomplete="email">
+        </div>
+        <div class="form-row">
+          <label for="cf-message">Message</label>
+          <textarea id="cf-message" name="message" required minlength="10" maxlength="5000" rows="5"></textarea>
+        </div>
+        <!-- honeypot: hidden from real users, bots often fill it in -->
+        <div class="hp-field" aria-hidden="true">
+          <label for="cf-company">Company</label>
+          <input type="text" id="cf-company" name="company" tabindex="-1" autocomplete="off">
+        </div>
+        <button type="submit" class="btn btn-solid" id="cf-submit">Send message</button>
+        <p class="form-status" id="cf-status" role="status" aria-live="polite"></p>
+      </form>
+      <div class="foot-note">
+        <span>P. Sri Vibhav — Hyderabad, India</span>
+        <span>Built with HTML &amp; CSS</span>
+      </div>
+    </div>
+  </footer>
+
+</main>
+
+<script>
+  // ---- Contact form config ----
+  // Set this to your deployed backend URL once it's live, e.g.
+  // "https://your-backend.onrender.com/api/contact"
+  var CONTACT_API_URL = "https://YOUR-BACKEND-URL/api/contact";
+
+  (function(){
+    var form = document.getElementById('contactForm');
+    var status = document.getElementById('cf-status');
+    var submitBtn = document.getElementById('cf-submit');
+    if(!form) return;
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      status.textContent = '';
+      status.className = 'form-status';
+
+      var payload = {
+        name: document.getElementById('cf-name').value.trim(),
+        email: document.getElementById('cf-email').value.trim(),
+        message: document.getElementById('cf-message').value.trim(),
+        company: document.getElementById('cf-company').value // honeypot
+      };
+
+      if(!payload.name || !payload.email || !payload.message){
+        status.textContent = 'Please fill in all fields.';
+        status.className = 'form-status err';
+        return;
+      }
+
+      if(CONTACT_API_URL.indexOf('YOUR-BACKEND-URL') !== -1){
+        status.textContent = 'Contact form backend isn\'t connected yet — email me directly for now.';
+        status.className = 'form-status err';
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+
+      fetch(CONTACT_API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+        .then(function(res){ return res.json().then(function(data){ return { ok: res.ok, data: data }; }); })
+        .then(function(result){
+          if(result.ok && result.data.ok){
+            status.textContent = 'Message sent — thanks for reaching out! I\'ll reply soon.';
+            status.className = 'form-status ok';
+            form.reset();
+          } else {
+            status.textContent = (result.data && result.data.error) || 'Something went wrong. Please try again.';
+            status.className = 'form-status err';
+          }
+        })
+        .catch(function(){
+          status.textContent = 'Could not reach the server. Please try again later or email me directly.';
+          status.className = 'form-status err';
+        })
+        .finally(function(){
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send message';
+        });
+    });
+  })();
+
+  (function(){
+    var words = [
+      "voice-controlled AI assistants",
+      "RAG-powered applications",
+      "autonomous data-science agents",
+      "LLM tools that actually ship"
+    ];
+    var el = document.getElementById('cycleWord');
+    if(!el) return;
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(reduceMotion) return;
+
+    var i = 0;
+    setInterval(function(){
+      i = (i + 1) % words.length;
+      el.style.opacity = 0;
+      setTimeout(function(){
+        el.textContent = words[i];
+        el.style.opacity = 1;
+      }, 220);
+    }, 2600);
+    el.style.transition = 'opacity 0.22s ease';
+  })();
+</script>
+
+</body>
+</html>
